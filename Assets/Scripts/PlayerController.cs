@@ -35,4 +35,12 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Goal"))
         Debug.Log("You win!");
     }
+     void Update()
+    {
+        if (health == 0)
+        {
+            Debug.Log("Game Over!");
+            SceneManager.LoadScene("maze");
+        }
+    }
 }

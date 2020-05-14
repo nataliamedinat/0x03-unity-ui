@@ -3838,7 +3838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ab9c31abeaae74498e8a2534dd04eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 900
+  speed: 1000
   rb: {fileID: 846029080}
   health: 5
 --- !u!4 &846769478 stripped
