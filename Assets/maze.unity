@@ -5079,11 +5079,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2077158307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 922464a0e9bdfb949acfb4fd5ff45f35, type: 3}
+  m_Script: {fileID: 11500000, guid: 027012018ee891c4a97d774df21b6aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 846029079}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &2082221699
 GameObject:
   m_ObjectHideFlags: 0
