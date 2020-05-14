@@ -31,5 +31,8 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Trap"))
         health -= 1;
         Debug.Log("Health: " + health);
+
+        if (other.CompareTag("Goal"))
+        Debug.Log("You win!");
     }
 }
