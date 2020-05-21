@@ -1435,7 +1435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &237077965
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4068,6 +4068,8 @@ MonoBehaviour:
   health: 5
   scoreText: {fileID: 1757713739}
   healthText: {fileID: 746578628}
+  WinLoseText: {fileID: 1878967917}
+  WinLoseBG: {fileID: 237077966}
 --- !u!4 &846769478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2486406345203034438, guid: 60467734b8311c54f9ced3a1dd2060ec,
@@ -7957,7 +7959,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40

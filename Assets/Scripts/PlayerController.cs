@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     public Text scoreText;
     public Text healthText;
+    public Text WinLoseText;
+    public Image WinLoseBG;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -41,14 +43,14 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Goal"))
         {
-            Debug.Log("You win!");
+            SetWinText();
         }
     }
     void Update()
     {
         if (health == 0)
         {
-            Debug.Log("Game Over!");
+            SetGameOver();
             SceneManager.LoadScene("maze");
         }
     }
@@ -60,4 +62,19 @@ public class PlayerController : MonoBehaviour
     {
         healthText.text = "Health: " + health.ToString();
     }
+
+    void SetWinText()
+    {
+        WinLoseBG.color = Color.green;
+        WinLoseText.color = Color.black;
+        WinLoseText.text = "You win!";
+    }
+
+    void SetGameOver()
+    {
+        WinLoseBG.color = Color.red;
+        WinLoseText.color = Color.white;
+        WinLoseText.text = "Game Over!";
+    }
+
 }
