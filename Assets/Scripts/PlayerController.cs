@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
             SetGameOver();
             StartCoroutine(LoadScene(3));
         }
+
+         if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     void FixedUpdate()
