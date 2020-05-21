@@ -1,6 +1,7 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,15 @@ public class PlayerController : MonoBehaviour
     public Image WinLoseBG;
 
     // Update is called once per frame
+    void Update()
+    {
+        if (health == 0)
+        {
+            SetGameOver();
+            StartCoroutine(LoadScene(3));
+        }
+    }
+
     void FixedUpdate()
     {
         if (Input.GetKey("w"))
@@ -44,20 +54,15 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Goal"))
         {
             SetWinText();
+            StartCoroutine(LoadScene(3));
         }
     }
-    void Update()
-    {
-        if (health == 0)
-        {
-            SetGameOver();
-            SceneManager.LoadScene("maze");
-        }
-    }
+
     void SetScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
     }
+
     void SetHealthText()
     {
         healthText.text = "Health: " + health.ToString();
@@ -68,6 +73,7 @@ public class PlayerController : MonoBehaviour
         WinLoseBG.color = Color.green;
         WinLoseText.color = Color.black;
         WinLoseText.text = "You win!";
+        WinLoseBG.gameObject.SetActive(true);
     }
 
     void SetGameOver()
@@ -75,6 +81,12 @@ public class PlayerController : MonoBehaviour
         WinLoseBG.color = Color.red;
         WinLoseText.color = Color.white;
         WinLoseText.text = "Game Over!";
+        WinLoseBG.gameObject.SetActive(true);
     }
 
+    IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene("maze");
+    }
 }
